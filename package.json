@@ -12,7 +12,8 @@
     "url": "git://github.com/medikoo/date-from-timezone.git"
   },
   "dependencies": {
-    "eslint-config-medikoo": "^1.18.0"
+    "d": "1",
+    "es5-ext": "^0.10.22"
   },
   "devDependencies": {
     "browserstack-tape-runner": "1",
