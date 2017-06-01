@@ -10,14 +10,14 @@ _If loaded in environment which does not provide `Intl.DateTimeFormat` or of whi
 ### Example
 
 ```javascript
-var DateFromTimezone = require("date-from-timezone");
+var dateFromTimezone = require("date-from-timezone");
 
-var dateFromWarsaw = new DateFromTimezone("Europe/Warsaw");
-var warsawNoon = dateFromWarsaw.getDate(2017, 6, 5, 12);
+var getWarsawDate = dateFromTimezone("Europe/Warsaw");
+var warsawNoon = getWarsawDate(2017, 6, 5, 12);
 console.log(warsawNoon.toISOString()); // "2017-07-05T10:00:00.000Z" (12PM in Warsaw was at 10AM in UTC)
 
-var dateFromShanghai = new DateFromTimezone("Asia/Shanghai");
-var shanghaiNoon = dateFromShanghai.getDate(2017, 6, 5, 12);
+var getShanghaiDate = dateFromTimezone("Asia/Shanghai");
+var shanghaiNoon = getShanghaiDate(2017, 6, 5, 12);
 console.log(shanghaiNoon.toISOString()); // "2017-07-05T04:00:00.000Z" (12PM in Shanghai was at 4AM in UTC)
 ```
 

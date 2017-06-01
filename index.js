@@ -49,7 +49,7 @@ var tokenizeDateStr = function (str) {
 	};
 };
 
-var DateFromTimezone = module.exports = function (timezone) {
+var DateFromTimezone = function (timezone) {
 	if (!(this instanceof DateFromTimezone)) {
 		throw new TypeError("Constructor DateFromTimezone requires 'new'");
 	}
@@ -109,3 +109,12 @@ Object.defineProperties(DateFromTimezone.prototype, {
 		return this._resolveDate(refDate, resultDate);
 	})
 });
+
+module.exports = function (timezone) {
+	var dateGenerator = new DateFromTimezone(timezone), getDate = dateGenerator.getDate;
+
+	// eslint-disable-next-line no-unused-vars
+	return function (year, month /*, date, hours, minutes, seconds, milliseconds*/) {
+		return getDate.apply(dateGenerator, arguments);
+	};
+};
