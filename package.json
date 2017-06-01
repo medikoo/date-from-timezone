@@ -71,11 +71,6 @@
         "os_version": "Sierra"
       },
       {
-        "os": "android",
-        "os_version": "5.0",
-        "device": "Google Nexus 9"
-      },
-      {
         "os": "ios",
         "os_version": "10.3",
         "device": "iPhone 7 Plus"
