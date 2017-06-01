@@ -3,14 +3,14 @@
 
 Having timezone and date/time information resolves regular date instance that reflects given time point.
 
-Light implementation with resolution on widely supported in modern engines [Intl.DateTimeFormat](http://www.ecma-international.org/ecma-402/1.0/#sec-12.1) interface.
+Light implementation with resolution based on widely supported in modern engines [Intl.DateTimeFormat](http://www.ecma-international.org/ecma-402/1.0/#sec-12.1) interface.
 
-_If loaded in environment that do not provide `Intl.DateTimeFormat` or of which support is incomplete, module resolves to `null`_
+_If loaded in environment which does not provide `Intl.DateTimeFormat` or of which support is incomplete, module resolves to `null`_
 
 ### Example
 
 ```javascript
-var DateFromTimezone = require("./");
+var DateFromTimezone = require("date-from-timezone");
 
 var dateFromWarsaw = new DateFromTimezone("Europe/Warsaw");
 var warsawNoon = dateFromWarsaw.getDate(2017, 6, 5, 12);
