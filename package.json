@@ -4,8 +4,12 @@
   "description": "Construct dates with timezone context",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
-    "id",
-    "key"
+    "timezone",
+    "date",
+    "time",
+    "datetime",
+    "intl",
+    "i18n"
   ],
   "repository": {
     "type": "git",
