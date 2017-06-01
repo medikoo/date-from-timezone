@@ -1,5 +1,5 @@
 # date-from-timezone
-## Construct dates with reference to timezone context
+## Construct dates with timezone context
 
 Having timezone and date & time information, returns regular date instance that corresponds do desired moment in time.
 
