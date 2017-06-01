@@ -1,11 +1,11 @@
 # date-from-timezone
 ## Construct dates with timezone context
 
-Having timezone and date & time information, returns regular date instance that corresponds do desired moment in time.
+Having timezone and date/time information resolves regular date instance that reflects given time point.
 
-Light implementation that stands on supported in modern engines [Intl.DateTimeFormat](http://www.ecma-international.org/ecma-402/1.0/#sec-12.1) interface.
+Light implementation with resolution on widely supported in modern engines [Intl.DateTimeFormat](http://www.ecma-international.org/ecma-402/1.0/#sec-12.1) interface.
 
-_In environments that do not provide `Intl.DateTimeFormat` or of which support is incomplete module resolves to `null`_
+_If loaded in environment that do not provide `Intl.DateTimeFormat` or of which support is incomplete, module resolves to `null`_
 
 ### Example
 
@@ -25,7 +25,7 @@ console.log(shanghaiNoon.toISOString()); // "2017-07-05T04:00:00.000Z" (12PM in 
 
 	$ npm install date-from-timezone
 
-### Test
+### Tests
 
 Project cross-browser compatibility supported by:
 
