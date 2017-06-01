@@ -95,7 +95,7 @@ Object.defineProperties(DateFromTimezone.prototype, {
 		var tokens = tokenizeDateStr(
 			new Intl.DateTimeFormat(refLocale, this._formatOptions).format(resultDate)
 		);
-		var tmpDate = new Date(
+		var resolvedDate = new Date(
 			tokens.year,
 			tokens.month,
 			tokens.date,
@@ -104,8 +104,8 @@ Object.defineProperties(DateFromTimezone.prototype, {
 			tokens.seconds
 		);
 
-		if (tmpDate.getTime() === refDate.getTime()) return resultDate;
-		resultDate.setTime(resultDate.getTime() + refDate.getTime() - tmpDate.getTime());
+		if (resolvedDate.getTime() === refDate.getTime()) return resultDate;
+		resultDate.setTime(resultDate.getTime() + refDate.getTime() - resolvedDate.getTime());
 		return this._resolveDate(refDate, resultDate);
 	})
 });
