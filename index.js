@@ -50,10 +50,6 @@ var tokenizeDateStr = function (str) {
 };
 
 var DateFromTimezone = function (timezone) {
-	if (!(this instanceof DateFromTimezone)) {
-		throw new TypeError("Constructor DateFromTimezone requires 'new'");
-	}
-
 	this.timezone = ensureString(timezone);
 
 	// Validate support for timezone, let eventual error propagate freely
