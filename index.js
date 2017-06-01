@@ -89,7 +89,7 @@ Object.defineProperties(DateFromTimezone.prototype, {
 		if (refDate < yearZero) {
 			throw new TypeError("Invalid getDate arguments: No support for BC years");
 		}
-		return this._resolveDate(refDate, copyDate.call(refDate), 3);
+		return this._resolveDate(refDate, copyDate.call(refDate));
 	}),
 	_resolveDate: d(function (refDate, resultDate) {
 		var tokens = tokenizeDateStr(
