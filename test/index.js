@@ -34,7 +34,6 @@ test("Main", function (t) {
 
 	t.test("Invalid usage", function (t) {
 		t.throws(function () {
-			// eslint-disable-next-line no-new
 			dateFromTimezone("WRONG TIMEZONE");
 		}, RangeError);
 
