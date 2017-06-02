@@ -23,8 +23,8 @@ var getShanghaiDate = dateFromTimezone("Asia/Shanghai");
 var warsawNoon = getWarsawDate(2017, 6, 5, 12);
 var shanghaiNoon = getShanghaiDate(2017, 6, 5, 12);
 
-console.log(warsawNoon.toISOString()); // "2017-07-05T10:00:00.000Z" (12PM in Warsaw was at 10AM in UTC)
-console.log(shanghaiNoon.toISOString()); // "2017-07-05T04:00:00.000Z" (12PM in Shanghai was at 4AM in UTC)
+console.log(warsawNoon.toISOString()); // "2017-07-05T10:00:00.000Z" (12PM in Warsaw was at 10AM UTC)
+console.log(shanghaiNoon.toISOString()); // "2017-07-05T04:00:00.000Z" (12PM in Shanghai was at 4AM UTC)
 ```
 
 ### Installation
