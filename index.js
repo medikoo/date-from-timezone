@@ -51,12 +51,10 @@ var tokenizeDateStr = function (str) {
 
 var DateFromTimezone = function (timezone) {
 	this.timezone = ensureString(timezone);
-
-	// Validate support for timezone, let eventual error propagate freely
-	// eslint-disable-next-line no-new
-	new Intl.DateTimeFormat(refLocale, { timeZone: this.timezone });
-
-	this._formatOptions = assign({ timeZone: this.timezone }, formatOptions);
+	this._formatter = new Intl.DateTimeFormat(
+		refLocale,
+		assign({ timeZone: this.timezone }, formatOptions)
+	);
 };
 
 var yearZero = new Date(-1, 12, 2);
@@ -88,9 +86,7 @@ Object.defineProperties(DateFromTimezone.prototype, {
 		return this._resolveDate(refDate, copyDate.call(refDate));
 	}),
 	_resolveDate: d(function (refDate, resultDate) {
-		var tokens = tokenizeDateStr(
-			new Intl.DateTimeFormat(refLocale, this._formatOptions).format(resultDate)
-		);
+		var tokens = tokenizeDateStr(this._formatter.format(resultDate));
 		var resolvedDate = new Date(
 			tokens.year,
 			tokens.month,
