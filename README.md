@@ -1,6 +1,6 @@
 [![Build status][circleci-image]][circleci-url]
 [![Build status][appveyor-image]][appveyor-url]
-[![Test coverate][codecov-image]][codecov-url]
+[![Tests coverage][codecov-image]][codecov-url]
 
 # date-from-timezone
 ## Construct dates with timezone context
