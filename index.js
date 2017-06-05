@@ -93,7 +93,8 @@ Object.defineProperties(DateFromTimezone.prototype, {
 			tokens.date,
 			tokens.hours,
 			tokens.minutes,
-			tokens.seconds
+			tokens.seconds,
+			resultDate.getMilliseconds()
 		);
 
 		if (resolvedDate.getTime() === refDate.getTime()) return resultDate;

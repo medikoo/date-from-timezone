@@ -32,6 +32,16 @@ test("Main", function (t) {
 		t.end();
 	});
 
+	t.test("Milliseconds", function (t) {
+		var getDate = dateFromTimezone("Europe/Warsaw");
+
+		t.deepEqual(
+			getDate(2017, 1, 2, 18, 14, 20, 123),
+			new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))
+		);
+		t.end();
+	});
+
 	t.test("Invalid usage", function (t) {
 		t.throws(function () {
 			dateFromTimezone("WRONG TIMEZONE");
