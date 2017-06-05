@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/medikoo/date-from-timezone/compare/v2.0.1...v2.0.2) (2017-06-05)
+
+
+### Bug Fixes
+
+* recalculation didn't handle milliseconds as expected ([7ce8bd8](https://github.com/medikoo/date-from-timezone/commit/7ce8bd8))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/medikoo/date-from-timezone/compare/v2.0.0...v2.0.1) (2017-06-02)
 
