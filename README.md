@@ -3,15 +3,18 @@
 [![Tests coverage][codecov-image]][codecov-url]
 
 # date-from-timezone
-## Construct dates with timezone context
+## Construct dates with timezone context or resolve date/time information for given timezone
 
-Having __timezone__ and __date & time__ information resolve __regular date instance that reflects given time point__.
+Having __timezone__ and __date & time information__ resolve __regular date instance that reflects given time point__, or
+having __timezone__ and __date instance__ resolve __date & time information for given timezone__.
 
 Light implementation which resolves needed data through natively available (in all modern engines, both browsers and Node.js) [Intl.DateTimeFormat](http://www.ecma-international.org/ecma-402/1.0/#sec-12.1).
 
 _If loaded in environment which does not provide `Intl.DateTimeFormat` or of which support is incomplete, module resolves to `null`_
 
-### Example
+### Examples
+
+#### Construct date instances in specific timezone context
 
 ```javascript
 var dateFromTimezone = require("date-from-timezone");
@@ -25,6 +28,21 @@ var shanghaiNoon = getShanghaiDate(2017, 6, 5, 12);
 
 console.log(warsawNoon.toISOString()); // "2017-07-05T10:00:00.000Z" (12PM in Warsaw was at 10AM UTC)
 console.log(shanghaiNoon.toISOString()); // "2017-07-05T04:00:00.000Z" (12PM in Shanghai was at 4AM UTC)
+```
+
+#### Resolve date & time information for given timezone
+
+```javascript
+var getTokenize = require("date-from-timezone/get-tokenize");
+
+var warsawTokenize = getTokenize("Europe/Warsaw");
+var shanghaiTokenize = getTokenize("Asia/Shanghai");
+
+// Logs: { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
+console.log(warsawTokenize(new Date(Date.UTC(2017, 6, 5, 10)))); 
+
+// Logs: { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
+console.log(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))));
 ```
 
 ### Installation

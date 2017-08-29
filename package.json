@@ -30,7 +30,7 @@
 	"scripts": {
 		"coverage": "tape-index && istanbul cover test.index.js",
 		"check-coverage":
-			"npm run coverage && istanbul check-coverage --statements -2 --function 100 --branches -1 --lines -2",
+			"npm run coverage && istanbul check-coverage --statements -4 --function 100 --branches -2 --lines -4",
 		"lint": "eslint --ignore-path=.gitignore .",
 		"test-browsers": "tape-index && browserstack-tape-runner test.index.js",
 		"test": "tape-index && node test.index.js"
