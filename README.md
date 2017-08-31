@@ -38,11 +38,11 @@ var getTokenize = require("date-from-timezone/get-tokenize");
 var warsawTokenize = getTokenize("Europe/Warsaw");
 var shanghaiTokenize = getTokenize("Asia/Shanghai");
 
-// Logs: { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
 console.log(warsawTokenize(new Date(Date.UTC(2017, 6, 5, 10)))); 
+// { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
 
-// Logs: { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
 console.log(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))));
+// { year: 2017, month 6, date: 5, hours: 12, minutes: 0, seconds: 0, milliseconds: 0 }
 ```
 
 ### Installation
