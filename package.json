@@ -1,71 +1,80 @@
 {
-	"name": "date-from-timezone",
-	"version": "2.1.0",
-	"description": "Construct dates with timezone context",
-	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-	"keywords": ["date", "datetime", "i18n", "iana", "intl", "moment", "olson", "time", "timezone"],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/medikoo/date-from-timezone.git"
-	},
-	"dependencies": {
-		"es5-ext": "^0.10.22"
-	},
-	"devDependencies": {
-		"browserstack-tape-runner": "^1.0.1",
-		"eslint": "^4.5",
-		"eslint-config-medikoo-es5": "^1.4.1",
-		"istanbul": "^0.4.5",
-		"tape": "^4.8",
-		"tape-index": "^1.1"
-	},
-	"eslintConfig": {
-		"extends": "medikoo-es5",
-		"root": true,
-		"globals": {
-			"Intl": true
-		}
-	},
-	"scripts": {
-		"coverage": "tape-index && istanbul cover test.index.js",
-		"check-coverage":
-			"npm run coverage && istanbul check-coverage --statements -4 --function 100 --branches -2 --lines -4",
-		"lint": "eslint --ignore-path=.gitignore .",
-		"test-browsers": "tape-index && browserstack-tape-runner test.index.js",
-		"test": "tape-index && node test.index.js"
-	},
-	"browserstack": {
-		"browsers": [
-			{
-				"browser": "chrome",
-				"browser_version": "latest",
-				"os": "OS X",
-				"os_version": "Sierra"
-			},
-			{
-				"browser": "firefox",
-				"browser_version": "latest",
-				"os": "OS X",
-				"os_version": "Sierra"
-			},
-			{
-				"browser": "opera",
-				"browser_version": "latest",
-				"os": "OS X",
-				"os_version": "Sierra"
-			},
-			{
-				"browser": "safari",
-				"browser_version": "latest",
-				"os": "OS X",
-				"os_version": "Sierra"
-			},
-			{
-				"os": "ios",
-				"os_version": "10.3",
-				"device": "iPhone 7 Plus"
-			}
-		]
-	},
-	"license": "MIT"
+  "name": "date-from-timezone",
+  "version": "2.1.1",
+  "description": "Construct dates with timezone context",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "keywords": [
+    "date",
+    "datetime",
+    "i18n",
+    "iana",
+    "intl",
+    "moment",
+    "olson",
+    "time",
+    "timezone"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/date-from-timezone.git"
+  },
+  "dependencies": {
+    "es5-ext": "^0.10.22"
+  },
+  "devDependencies": {
+    "browserstack-tape-runner": "^1.0.1",
+    "eslint": "^4.5",
+    "eslint-config-medikoo-es5": "^1.4.1",
+    "istanbul": "^0.4.5",
+    "tape": "^4.8",
+    "tape-index": "^1.1"
+  },
+  "eslintConfig": {
+    "extends": "medikoo-es5",
+    "root": true,
+    "globals": {
+      "Intl": true
+    }
+  },
+  "scripts": {
+    "coverage": "tape-index && istanbul cover test.index.js",
+    "check-coverage": "npm run coverage && istanbul check-coverage --statements -4 --function 100 --branches -2 --lines -4",
+    "lint": "eslint --ignore-path=.gitignore .",
+    "test-browsers": "tape-index && browserstack-tape-runner test.index.js",
+    "test": "tape-index && node test.index.js"
+  },
+  "browserstack": {
+    "browsers": [
+      {
+        "browser": "chrome",
+        "browser_version": "latest",
+        "os": "OS X",
+        "os_version": "Sierra"
+      },
+      {
+        "browser": "firefox",
+        "browser_version": "latest",
+        "os": "OS X",
+        "os_version": "Sierra"
+      },
+      {
+        "browser": "opera",
+        "browser_version": "latest",
+        "os": "OS X",
+        "os_version": "Sierra"
+      },
+      {
+        "browser": "safari",
+        "browser_version": "latest",
+        "os": "OS X",
+        "os_version": "Sierra"
+      },
+      {
+        "os": "ios",
+        "os_version": "10.3",
+        "device": "iPhone 7 Plus"
+      }
+    ]
+  },
+  "license": "MIT"
 }
