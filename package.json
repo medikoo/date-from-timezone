@@ -1,9 +1,19 @@
 {
   "name": "date-from-timezone",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Construct dates with timezone context",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-  "keywords": ["date", "datetime", "i18n", "iana", "intl", "moment", "olson", "time", "timezone"],
+  "keywords": [
+    "date",
+    "datetime",
+    "i18n",
+    "iana",
+    "intl",
+    "moment",
+    "olson",
+    "time",
+    "timezone"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/medikoo/date-from-timezone.git"
@@ -29,8 +39,7 @@
   },
   "scripts": {
     "coverage": "tape-index && istanbul cover test.index.js",
-    "check-coverage":
-      "npm run coverage && istanbul check-coverage --statements -4 --function 100 --branches -2 --lines -4",
+    "check-coverage": "npm run coverage && istanbul check-coverage --statements -4 --function 100 --branches -2 --lines -4",
     "lint": "eslint --ignore-path=.gitignore .",
     "test-browsers": "tape-index && browserstack-tape-runner test.index.js",
     "test": "tape-index && node test.index.js"
