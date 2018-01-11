@@ -2,7 +2,9 @@
 
 var ensureDate   = require("es5-ext/date/valid-date")
   , assign       = require("es5-ext/object/assign")
-  , ensureString = require("es5-ext/object/validate-stringifiable-value");
+  , ensureString = require("es5-ext/object/validate-stringifiable-value")
+  , d            = require("d")
+  , lazy         = require("d/lazy");
 
 var refLocale = "en", dateStrRe = /^(\d{2})\/(\d{2})\/(\d{1,4}), (\d{2}):(\d{2}):(\d{2})$/;
 
@@ -40,6 +42,33 @@ var getFormatter = function (timezone) {
 
 var tokenizers = Object.create(null), yearZero = new Date(-1, 12, 2);
 
+var Tokens = function (date, formatter) {
+	var match = formatter.format(date).match(dateStrRe);
+	this.year = Number(match[3]);
+	this.month = Number(match[1]) - 1;
+	this.date = Number(match[2]);
+	this.hours = Number(match[4]);
+	this.minutes = Number(match[5]);
+	this.seconds = Number(match[6]);
+	this.milliseconds = date.getMilliseconds();
+};
+Object.defineProperties(
+	Tokens.prototype,
+	lazy({
+		dateObject: d(function () {
+			return new Date(
+				this.year,
+				this.month,
+				this.date,
+				this.hours,
+				this.minutes,
+				this.seconds,
+				this.milliseconds
+			);
+		})
+	})
+);
+
 module.exports = function (timezone) {
 	timezone = ensureString(timezone);
 	if (tokenizers[timezone]) return tokenizers[timezone];
@@ -51,15 +80,6 @@ module.exports = function (timezone) {
 		if (date < yearZero) {
 			throw new TypeError("Invalid arguments: No support for BC years");
 		}
-		var match = formatter.format(date).match(dateStrRe);
-		return {
-			year: Number(match[3]),
-			month: Number(match[1]) - 1,
-			date: Number(match[2]),
-			hours: Number(match[4]),
-			minutes: Number(match[5]),
-			seconds: Number(match[6]),
-			milliseconds: date.getMilliseconds()
-		};
+		return new Tokens(date, formatter);
 	};
 };

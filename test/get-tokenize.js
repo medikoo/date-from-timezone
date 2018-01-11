@@ -88,6 +88,34 @@ test("Main", function (t) {
 		t.end();
 	});
 
+	t.test("Date object", function (t) {
+		var tokenize = getTokenize("Europe/Warsaw")
+		  , dateObject = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))).dateObject;
+
+		t.ok(dateObject instanceof Date);
+		t.deepEqual(
+			{
+				year: dateObject.getFullYear(),
+				month: dateObject.getMonth(),
+				date: dateObject.getDate(),
+				hours: dateObject.getHours(),
+				minutes: dateObject.getMinutes(),
+				seconds: dateObject.getSeconds(),
+				milliseconds: dateObject.getMilliseconds()
+			},
+			{
+				year: 2017,
+				month: 1,
+				date: 2,
+				hours: 18,
+				minutes: 14,
+				seconds: 20,
+				milliseconds: 123
+			}
+		);
+		t.end();
+	});
+
 	t.test("Invalid usage", function (t) {
 		t.throws(function () {
 			getTokenize("WRONG TIMEZONE");
