@@ -3,7 +3,7 @@
 [![Tests coverage][codecov-image]][codecov-url]
 
 # date-from-timezone
-## Construct dates with timezone context or resolve date/time information for given timezone
+## Construct date instances within timezone context or resolve date/time information for given timezone
 
 Having __timezone__ and __date & time information__ resolve __regular date instance that reflects given time point__, or
 having __timezone__ and __date instance__ resolve __date & time information for given timezone__.
