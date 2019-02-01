@@ -1,7 +1,7 @@
 "use strict";
 
 const test             = require("tape")
-  , dateFromTimezone = require("../");
+    , dateFromTimezone = require("../");
 
 test("Main", t => {
 	t.equal(typeof dateFromTimezone, "function", "Supported");
@@ -21,7 +21,9 @@ test("Main", t => {
 		const getDate = dateFromTimezone("Europe/Warsaw");
 
 		t.deepEqual(getDate(2017, 1, 2, 18), new Date(Date.UTC(2017, 1, 2, 17)));
-		t.deepEqual(getDate(2017, 7, 2, 18), new Date(Date.UTC(2017, 7, 2, 16)), "DST");
+		t.deepEqual(
+			getDate(2017, 7, 2, 18), new Date(Date.UTC(2017, 7, 2, 16)), "DST"
+		);
 		t.end();
 	});
 
@@ -43,18 +45,12 @@ test("Main", t => {
 	});
 
 	t.test("Invalid usage", t => {
-		t.throws(() => {
-			dateFromTimezone("WRONG TIMEZONE");
-		}, RangeError);
+		t.throws(() => { dateFromTimezone("WRONG TIMEZONE"); }, RangeError);
 
 		const getDate = dateFromTimezone("Asia/Shanghai");
 
-		t.throws(() => {
-			getDate();
-		}, /Invalid arguments: Expected/);
-		t.throws(() => {
-			getDate(2015);
-		}, /Invalid arguments: Expected/);
+		t.throws(() => { getDate(); }, /Invalid arguments: Expected/);
+		t.throws(() => { getDate(2015); }, /Invalid arguments: Expected/);
 		t.throws(() => {
 			getDate(2014999999999, 99);
 		}, /Invalid Date is not valid Date object/);

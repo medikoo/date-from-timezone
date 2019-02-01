@@ -1,7 +1,7 @@
 "use strict";
 
 const test        = require("tape")
-  , getTokenize = require("../get-tokenize");
+    , getTokenize = require("../get-tokenize");
 
 test("Main", t => {
 	t.equal(typeof getTokenize, "function", "Supported");
@@ -90,7 +90,8 @@ test("Main", t => {
 
 	t.test("Date object", t => {
 		const tokenize = getTokenize("Europe/Warsaw")
-		  , dateObject = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))).dateObject;
+		    , dateObject = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123)))
+				.dateObject;
 
 		t.ok(dateObject instanceof Date);
 		t.deepEqual(
@@ -117,9 +118,7 @@ test("Main", t => {
 	});
 
 	t.test("Invalid usage", t => {
-		t.throws(() => {
-			getTokenize("WRONG TIMEZONE");
-		}, RangeError);
+		t.throws(() => { getTokenize("WRONG TIMEZONE"); }, RangeError);
 
 		const tokenize = getTokenize("Asia/Shanghai");
 
