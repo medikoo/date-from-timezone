@@ -27,7 +27,7 @@
     "eslint": "^5.12.1",
     "eslint-config-medikoo": "2",
     "nyc": "^13.1",
-    "prettier-elastic": "^1.16.1",
+    "prettier-elastic": "^1.16.3",
     "tape": "^4.9.2",
     "tape-index": "2"
   },
