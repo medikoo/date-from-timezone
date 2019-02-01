@@ -24,14 +24,14 @@
   },
   "devDependencies": {
     "browserstack-tape-runner": "3",
-    "eslint": "^4.15",
-    "eslint-config-medikoo-es5": "^1.4.7",
+    "eslint": "^5.12.1",
+    "eslint-config-medikoo": "2",
     "nyc": "^13.1",
     "tape": "^4.9.2",
     "tape-index": "2"
   },
   "eslintConfig": {
-    "extends": "medikoo-es5",
+    "extends": "medikoo",
     "root": true,
     "globals": {
       "Intl": true

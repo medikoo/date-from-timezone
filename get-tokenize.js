@@ -1,14 +1,14 @@
 "use strict";
 
-var ensureDate   = require("es5-ext/date/valid-date")
+const ensureDate   = require("es5-ext/date/valid-date")
   , assign       = require("es5-ext/object/assign")
   , ensureString = require("es5-ext/object/validate-stringifiable-value")
   , d            = require("d")
   , lazy         = require("d/lazy");
 
-var refLocale = "en", dateStrRe = /^(\d{2})\/(\d{2})\/(\d{1,4}), (\d{2}):(\d{2}):(\d{2})$/;
+const refLocale = "en", dateStrRe = /^(\d{2})\/(\d{2})\/(\d{1,4}), (\d{2}):(\d{2}):(\d{2})$/;
 
-var formatOptions = {
+const formatOptions = {
 	hour12: false,
 	year: "numeric",
 	month: "2-digit",
@@ -36,14 +36,14 @@ if (
 	return;
 }
 
-var getFormatter = function (timezone) {
+const getFormatter = function (timezone) {
 	return new Intl.DateTimeFormat(refLocale, assign({ timeZone: timezone }, formatOptions));
 };
 
-var tokenizers = Object.create(null), yearZero = new Date(-1, 12, 2);
+const tokenizers = Object.create(null), yearZero = new Date(-1, 12, 2);
 
-var Tokens = function (date, formatter) {
-	var match = formatter.format(date).match(dateStrRe);
+const Tokens = function (date, formatter) {
+	const match = formatter.format(date).match(dateStrRe);
 	this.year = Number(match[3]);
 	this.month = Number(match[1]) - 1;
 	this.date = Number(match[2]);
@@ -73,7 +73,7 @@ module.exports = function (timezone) {
 	timezone = ensureString(timezone);
 	if (tokenizers[timezone]) return tokenizers[timezone];
 
-	var formatter = getFormatter(timezone);
+	const formatter = getFormatter(timezone);
 
 	return tokenizers[timezone] = function (date) {
 		ensureDate(date);

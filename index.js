@@ -1,6 +1,6 @@
 "use strict";
 
-var copyDate    = require("es5-ext/date/#/copy")
+const copyDate    = require("es5-ext/date/#/copy")
   , getTokenize = require("./get-tokenize");
 
 if (!getTokenize) {
@@ -9,8 +9,8 @@ if (!getTokenize) {
 }
 
 var resolveDate = function (refDate, resultDate, tokenize) {
-	var tokens = tokenize(resultDate);
-	var resolvedDate = new Date(
+	const tokens = tokenize(resultDate);
+	const resolvedDate = new Date(
 		tokens.year,
 		tokens.month,
 		tokens.date,
@@ -26,17 +26,17 @@ var resolveDate = function (refDate, resultDate, tokenize) {
 };
 
 module.exports = function (timezone) {
-	var tokenize = getTokenize(timezone);
+	const tokenize = getTokenize(timezone);
 
 	// eslint-disable-next-line no-unused-vars
-	return function (year, month /*, date, hours, minutes, seconds, milliseconds*/) {
+	return function (year, month /* , date, hours, minutes, seconds, milliseconds*/) {
 		if (isNaN(year) || isNaN(month)) {
 			throw new TypeError(
 				"Invalid arguments: Expected: " +
 					"year, month[, date[, hours[, minutes[, second[, milliseconds]]]]]"
 			);
 		}
-		var date = new Date(
+		const date = new Date(
 			year,
 			month,
 			arguments[2] || 1,

@@ -1,22 +1,22 @@
 "use strict";
 
-var test        = require("tape")
+const test        = require("tape")
   , getTokenize = require("../get-tokenize");
 
-test("Main", function (t) {
+test("Main", t => {
 	t.equal(typeof getTokenize, "function", "Supported");
 	if (!getTokenize) {
 		t.end();
 		return;
 	}
 
-	t.test("Memoize", function (t) {
+	t.test("Memoize", t => {
 		t.equal(getTokenize("UTC"), getTokenize("UTC"));
 		t.end();
 	});
 
-	t.test("UTC", function (t) {
-		var tokenize = getTokenize("UTC");
+	t.test("UTC", t => {
+		const tokenize = getTokenize("UTC");
 
 		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1))), {
 			year: 2017,
@@ -30,8 +30,8 @@ test("Main", function (t) {
 		t.end();
 	});
 
-	t.test("Europe/Warsaw", function (t) {
-		var tokenize = getTokenize("Europe/Warsaw");
+	t.test("Europe/Warsaw", t => {
+		const tokenize = getTokenize("Europe/Warsaw");
 
 		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 17))), {
 			year: 2017,
@@ -58,8 +58,8 @@ test("Main", function (t) {
 		t.end();
 	});
 
-	t.test("Asia/Shanghai", function (t) {
-		var tokenize = getTokenize("Asia/Shanghai");
+	t.test("Asia/Shanghai", t => {
+		const tokenize = getTokenize("Asia/Shanghai");
 
 		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 10))), {
 			year: 2017,
@@ -73,8 +73,8 @@ test("Main", function (t) {
 		t.end();
 	});
 
-	t.test("Milliseconds", function (t) {
-		var tokenize = getTokenize("Europe/Warsaw");
+	t.test("Milliseconds", t => {
+		const tokenize = getTokenize("Europe/Warsaw");
 
 		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))), {
 			year: 2017,
@@ -88,8 +88,8 @@ test("Main", function (t) {
 		t.end();
 	});
 
-	t.test("Date object", function (t) {
-		var tokenize = getTokenize("Europe/Warsaw")
+	t.test("Date object", t => {
+		const tokenize = getTokenize("Europe/Warsaw")
 		  , dateObject = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))).dateObject;
 
 		t.ok(dateObject instanceof Date);
@@ -116,17 +116,17 @@ test("Main", function (t) {
 		t.end();
 	});
 
-	t.test("Invalid usage", function (t) {
-		t.throws(function () {
+	t.test("Invalid usage", t => {
+		t.throws(() => {
 			getTokenize("WRONG TIMEZONE");
 		}, RangeError);
 
-		var tokenize = getTokenize("Asia/Shanghai");
+		const tokenize = getTokenize("Asia/Shanghai");
 
-		t.throws(function () {
+		t.throws(() => {
 			tokenize(new Date(2014999999999, 99));
 		}, /Invalid Date is not valid Date object/);
-		t.throws(function () {
+		t.throws(() => {
 			tokenize(new Date(-10, 1));
 		}, /Invalid arguments: No support for BC years/);
 		t.end();
