@@ -23,7 +23,7 @@
     "es5-ext": "^0.10.37"
   },
   "devDependencies": {
-    "browserstack-tape-runner": "^1.0.1",
+    "browserstack-tape-runner": "3",
     "eslint": "^4.15",
     "eslint-config-medikoo-es5": "^1.4.7",
     "istanbul": "^0.4.5",
@@ -69,11 +69,6 @@
         "browser_version": "latest",
         "os": "OS X",
         "os_version": "Sierra"
-      },
-      {
-        "os": "ios",
-        "os_version": "10.3",
-        "device": "iPhone 7 Plus"
       }
     ]
   },
