@@ -20,15 +20,15 @@
   },
   "dependencies": {
     "d": "1",
-    "es5-ext": "^0.10.37"
+    "es5-ext": "^0.10.47"
   },
   "devDependencies": {
     "browserstack-tape-runner": "3",
     "eslint": "^4.15",
     "eslint-config-medikoo-es5": "^1.4.7",
     "istanbul": "^0.4.5",
-    "tape": "^4.8",
-    "tape-index": "^1.1.1"
+    "tape": "^4.9.2",
+    "tape-index": "2"
   },
   "eslintConfig": {
     "extends": "medikoo-es5",
