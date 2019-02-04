@@ -25,8 +25,11 @@ var dateFromTimezone = require("date-from-timezone");
 var getWarsawDate = dateFromTimezone("Europe/Warsaw");
 var getShanghaiDate = dateFromTimezone("Asia/Shanghai");
 
-// Signature of getXDate follows: Date(year, month[, date[, hour[, minutes[, seconds[, milliseconds]]]]])
+// Signature of getXDate follows: Date(yearOrTimeValue[, month[, date[, hour[, minutes[, seconds[, milliseconds]]]]])
 var warsawNoon = getWarsawDate(2017, 6, 5, 12);
+// also e.g.
+warsawNoon = getWarsawDate(Date.parse("7/5/2017 12:00:00 PM"));
+
 var shanghaiNoon = getShanghaiDate(2017, 6, 5, 12);
 
 console.log(warsawNoon.toISOString()); // "2017-07-05T10:00:00.000Z" (12PM in Warsaw was at 10AM UTC)
