@@ -21,9 +21,7 @@ test("Main", t => {
 		const getDate = dateFromTimezone("Europe/Warsaw");
 
 		t.deepEqual(getDate(2017, 1, 2, 18), new Date(Date.UTC(2017, 1, 2, 17)));
-		t.deepEqual(
-			getDate(2017, 7, 2, 18), new Date(Date.UTC(2017, 7, 2, 16)), "DST"
-		);
+		t.deepEqual(getDate(2017, 7, 2, 18), new Date(Date.UTC(2017, 7, 2, 16)), "DST");
 		t.end();
 	});
 
@@ -38,8 +36,7 @@ test("Main", t => {
 		const getDate = dateFromTimezone("Europe/Warsaw");
 
 		t.deepEqual(
-			getDate(2017, 1, 2, 18, 14, 20, 123),
-			new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))
+			getDate(2017, 1, 2, 18, 14, 20, 123), new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))
 		);
 		t.end();
 	});
@@ -49,14 +46,10 @@ test("Main", t => {
 
 		const getDate = dateFromTimezone("Asia/Shanghai");
 
-		t.throws(() => { getDate(); }, /Invalid arguments: Expected/);
-		t.throws(() => { getDate(2015); }, /Invalid arguments: Expected/);
-		t.throws(() => {
-			getDate(2014999999999, 99);
-		}, /Invalid Date is not valid Date object/);
-		t.throws(() => {
-			getDate(-10, 1);
-		}, /Invalid arguments: No support for BC years/);
+		t.throws(() => { getDate(); }, /Invalid arguments: Expected/u);
+		t.throws(() => { getDate(2015); }, /Invalid arguments: Expected/u);
+		t.throws(() => { getDate(2014999999999, 99); }, /Invalid Date is not valid Date object/u);
+		t.throws(() => { getDate(-10, 1); }, /Invalid arguments: No support for BC years/u);
 		t.end();
 	});
 	t.end();
