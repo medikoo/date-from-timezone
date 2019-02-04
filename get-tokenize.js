@@ -7,7 +7,7 @@ const ensureDate   = require("es5-ext/date/valid-date")
     , lazy         = require("d/lazy");
 
 const refLocale = "en"
-    , dateStrRe = /^(\d{2})\/(\d{2})\/(\d{1,4}), (\d{2}):(\d{2}):(\d{2})$/;
+    , dateStrRe = /^(\d{2})\/(\d{2})\/(\d{1,4}), (\d{2}):(\d{2}):(\d{2})$/u;
 
 const formatOptions = {
 	hour12: false,
