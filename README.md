@@ -50,9 +50,7 @@ console.log(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))));
 // We can also retrieve date object. It's important to understand that it won't reflect given time
 // point (so should not be used for date timestamp comparisons) but can be used as interim value
 // to be used to get formatted date string
-console.log(
-	String(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))).dateObject)
-);
+console.log(String(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))).dateObject));
 // In CEST Timezone it'll log:
 // "Wed Jul 05 2017 12:00:00 GMT+0200 (CEST)"
 ```
