@@ -9,11 +9,7 @@ if (!getTokenize) {
 }
 
 const resolveDate = function (refDate, resultDate, tokenize) {
-	const tokens = tokenize(resultDate);
-	const resolvedDate = new Date(
-		tokens.year, tokens.month, tokens.date, tokens.hours, tokens.minutes, tokens.seconds,
-		tokens.milliseconds
-	);
+	const resolvedDate = tokenize(resultDate).dateObject;
 
 	if (resolvedDate.getTime() === refDate.getTime()) return resultDate;
 	resultDate.setTime(resultDate.getTime() + refDate.getTime() - resolvedDate.getTime());
