@@ -23,7 +23,6 @@ const resolveDate = function (refDate, resultDate, tokenize) {
 module.exports = function (timezone) {
 	const tokenize = getTokenize(timezone);
 
-	// eslint-disable-next-line no-unused-vars
 	return function (year, month, date = 1, hours = 0, minutes = 0, seconds = 0, milliseconds = 0) {
 		if (isNaN(year) || isNaN(month)) {
 			throw new TypeError(
