@@ -1,6 +1,8 @@
-[![Build status][circleci-image]][circleci-url]
-[![Build status][appveyor-image]][appveyor-url]
-[![Tests coverage][codecov-image]][codecov-url]
+[![*nix build status][nix-build-image]][nix-build-url]
+[![Windows build status][win-build-image]][win-build-url]
+[![Tests coverage][cov-image]][cov-url]
+![Transpilation status][transpilation-image]
+[![npm version][npm-image]][npm-url]
 
 # date-from-timezone
 
@@ -67,9 +69,11 @@ Project cross-browser compatibility supported by:
 
 <a href="https://browserstack.com"><img src="https://bstacksupport.zendesk.com/attachments/token/Pj5uf2x5GU9BvWErqAr51Jh2R/?name=browserstack-logo-600x315.png" height="150" /></a>
 
-[circleci-image]: https://img.shields.io/circleci/project/github/medikoo/date-from-timezone.svg
-[circleci-url]: https://circleci.com/gh/medikoo/date-from-timezone
-[appveyor-image]: https://img.shields.io/appveyor/ci/medikoo/date-from-timezone.svg
-[appveyor-url]: https://ci.appveyor.com/project/medikoo/date-from-timezone
-[codecov-image]: https://img.shields.io/codecov/c/github/medikoo/date-from-timezone.svg
-[codecov-url]: https://codecov.io/gh/medikoo/date-from-timezone
+[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/date-from-timezone/branches/master/shields_badge.svg
+[nix-build-url]: https://semaphoreci.com/medikoo-org/date-from-timezone
+[win-build-image]: https://ci.appveyor.com/api/projects/status/9mtwigtdxo1fki8x?svg=true
+[win-build-url]: https://ci.appveyor.com/api/project/medikoo/date-from-timezone
+[cov-image]: https://img.shields.io/codecov/c/github/medikoo/date-from-timezone.svg
+[cov-url]: https://codecov.io/gh/medikoo/date-from-timezone
+[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
+[npm-image]: https://img.shields.io/npm/v/date-from-timezone.svg
