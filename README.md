@@ -77,3 +77,4 @@ Project cross-browser compatibility supported by:
 [cov-url]: https://codecov.io/gh/medikoo/date-from-timezone
 [transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/date-from-timezone.svg
+[npm-url]: https://www.npmjs.com/package/date-from-timezone
