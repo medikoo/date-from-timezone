@@ -1,7 +1,7 @@
 "use strict";
 
 const test        = require("tape")
-    , getTokenize = require("../get-tokenize");
+    , getTokenize = require("../../get-tokenize");
 
 test("Main", t => {
 	t.equal(typeof getTokenize, "function", "Supported");
@@ -44,15 +44,7 @@ test("Main", t => {
 		});
 		t.deepEqual(
 			tokenize(new Date(Date.UTC(2017, 7, 2, 16))),
-			{
-				year: 2017,
-				month: 7,
-				date: 2,
-				hours: 18,
-				minutes: 0,
-				seconds: 0,
-				milliseconds: 0
-			},
+			{ year: 2017, month: 7, date: 2, hours: 18, minutes: 0, seconds: 0, milliseconds: 0 },
 			"DST"
 		);
 		t.end();
@@ -90,8 +82,7 @@ test("Main", t => {
 
 	t.test("Date object", t => {
 		const tokenize = getTokenize("Europe/Warsaw")
-		    , dateObject = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123)))
-				.dateObject;
+		    , { dateObject } = tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123)));
 
 		t.ok(dateObject instanceof Date);
 		t.deepEqual(
@@ -124,10 +115,10 @@ test("Main", t => {
 
 		t.throws(() => {
 			tokenize(new Date(2014999999999, 99));
-		}, /Invalid Date is not valid Date object/);
+		}, /Invalid Date is not valid Date object/u);
 		t.throws(() => {
 			tokenize(new Date(-10, 1));
-		}, /Invalid arguments: No support for BC years/);
+		}, /Invalid arguments: No support for BC years/u);
 		t.end();
 	});
 	t.end();
