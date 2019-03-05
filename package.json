@@ -1,99 +1,99 @@
 {
-  "name": "date-from-timezone",
-  "version": "3.0.0",
-  "description": "Construct dates with timezone context",
-  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-  "keywords": [
-    "date",
-    "datetime",
-    "i18n",
-    "iana",
-    "intl",
-    "moment",
-    "olson",
-    "time",
-    "timezone"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/medikoo/date-from-timezone.git"
-  },
-  "dependencies": {
-    "d": "1",
-    "es5-ext": "^0.10.48"
-  },
-  "devDependencies": {
-    "browserstack-tape-runner": "3",
-    "eslint": "^5.14.1",
-    "eslint-config-medikoo": "2",
-    "essentials": "1",
-    "git-list-updated": "^1.1.2",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "nyc": "^13.3.0",
-    "prettier-elastic": "^1.16.4",
-    "tape": "^4.10.1",
-    "tape-index": "^3.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint"
-    ],
-    "*.{css,html,js,json,md,yaml,yml}": [
-      "prettier -c"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "medikoo",
-    "root": true,
-    "globals": {
-      "Intl": true
-    }
-  },
-  "scripts": {
-    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
-    "check-coverage": "npm run coverage && nyc check-coverage --statements -4 --function 100 --branches -2 --lines -4",
-    "lint": "eslint --ignore-path=.gitignore .",
-    "lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
-    "prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
-    "prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
-    "test-browsers": "browserstack-tape-runner test.index.js",
-    "test-prepare": "tape-index",
-    "test-run": "node test.index.js",
-    "test": "npm run test-prepare && npm run test-run"
-  },
-  "browserstack": {
-    "browsers": [
-      {
-        "browser": "chrome",
-        "browser_version": "latest",
-        "os": "OS X",
-        "os_version": "Sierra"
-      },
-      {
-        "browser": "firefox",
-        "browser_version": "latest",
-        "os": "OS X",
-        "os_version": "Sierra"
-      },
-      {
-        "browser": "opera",
-        "browser_version": "latest",
-        "os": "OS X",
-        "os_version": "Sierra"
-      },
-      {
-        "browser": "safari",
-        "browser_version": "latest",
-        "os": "OS X",
-        "os_version": "Sierra"
-      }
-    ]
-  },
-  "license": "ISC"
+	"name": "date-from-timezone",
+	"version": "3.0.0",
+	"description": "Construct dates with timezone context",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"date",
+		"datetime",
+		"i18n",
+		"iana",
+		"intl",
+		"moment",
+		"olson",
+		"time",
+		"timezone"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/medikoo/date-from-timezone.git"
+	},
+	"dependencies": {
+		"d": "1",
+		"es5-ext": "^0.10.48"
+	},
+	"devDependencies": {
+		"browserstack-tape-runner": "3",
+		"eslint": "^5.14.1",
+		"eslint-config-medikoo": "2",
+		"essentials": "1",
+		"git-list-updated": "^1.1.2",
+		"husky": "^1.3.1",
+		"lint-staged": "^8.1.4",
+		"nyc": "^13.3.0",
+		"prettier-elastic": "^1.16.4",
+		"tape": "^4.10.1",
+		"tape-index": "^3.0.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"eslintConfig": {
+		"extends": "medikoo",
+		"root": true,
+		"globals": {
+			"Intl": true
+		}
+	},
+	"scripts": {
+		"coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
+		"check-coverage": "npm run coverage && nyc check-coverage --statements -4 --function 100 --branches -2 --lines -4",
+		"lint": "eslint --ignore-path=.gitignore .",
+		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
+		"test-browsers": "browserstack-tape-runner test.index.js",
+		"test-prepare": "tape-index",
+		"test-run": "node test.index.js",
+		"test": "npm run test-prepare && npm run test-run"
+	},
+	"browserstack": {
+		"browsers": [
+			{
+				"browser": "chrome",
+				"browser_version": "latest",
+				"os": "OS X",
+				"os_version": "Sierra"
+			},
+			{
+				"browser": "firefox",
+				"browser_version": "latest",
+				"os": "OS X",
+				"os_version": "Sierra"
+			},
+			{
+				"browser": "opera",
+				"browser_version": "latest",
+				"os": "OS X",
+				"os_version": "Sierra"
+			},
+			{
+				"browser": "safari",
+				"browser_version": "latest",
+				"os": "OS X",
+				"os_version": "Sierra"
+			}
+		]
+	},
+	"license": "ISC"
 }
