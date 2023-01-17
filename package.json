@@ -1,6 +1,6 @@
 {
 	"name": "date-from-timezone",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Construct dates with timezone context",
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"keywords": [

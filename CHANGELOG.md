@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [3.0.1](https://github.com/medikoo/date-from-timezone/compare/v3.0.0...v3.0.1) (2023-01-17)
+
+### Bug Fixes
+
+- Prevent `RangeError: Maximum call stack size exceeded` error in Node.js v14+. Handle gently `24` hour output from `Intl` ([2b0bbf6](https://github.com/medikoo/date-from-timezone/commit/2b0bbf64dc38fc816837f726ebd6e5ead06a894f))
+
+### Maintenance Improvements
+
+- Document internal logic ([1980ed9](https://github.com/medikoo/date-from-timezone/commit/1980ed92bc62be256da7d8f4a18bd286bff4abed))
 
 # [3.0.0](https://github.com/medikoo/date-from-timezone/compare/v2.2.0...v3.0.0) (2019-02-05)
 
