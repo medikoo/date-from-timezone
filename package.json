@@ -14,10 +14,7 @@
 		"time",
 		"timezone"
 	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/medikoo/date-from-timezone.git"
-	},
+	"repository": "medikoo/date-from-timezone",
 	"dependencies": {
 		"d": "^1.0.1",
 		"es5-ext": "^0.10.62"
