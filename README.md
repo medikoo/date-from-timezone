@@ -64,10 +64,6 @@ console.log(String(shanghaiTokenize(new Date(Date.UTC(2017, 6, 5, 4))).dateObjec
 
     $ npm test
 
-Project cross-browser compatibility supported by:
-
-<a href="https://browserstack.com"><img src="https://bstacksupport.zendesk.com/attachments/token/Pj5uf2x5GU9BvWErqAr51Jh2R/?name=browserstack-logo-600x315.png" height="150" /></a>
-
 [build-image]: https://github.com/medikoo/date-from-timezone/workflows/Integrate/badge.svg
 [build-url]: https://github.com/medikoo/date-from-timezone/actions?query=workflow%3AIntegrate
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/date-from-timezone.svg
