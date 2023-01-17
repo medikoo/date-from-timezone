@@ -3,6 +3,8 @@
 const test        = require("tape")
     , getTokenize = require("../../get-tokenize");
 
+const toPlainObject = value => JSON.parse(JSON.stringify(value));
+
 test("getTokenize", t => {
 	t.equal(typeof getTokenize, "function", "Supported");
 	if (!getTokenize) {
@@ -18,7 +20,7 @@ test("getTokenize", t => {
 	t.test("UTC", t => {
 		const tokenize = getTokenize("UTC");
 
-		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1))), {
+		t.deepEqual(toPlainObject(tokenize(new Date(Date.UTC(2017, 1)))), {
 			year: 2017,
 			month: 1,
 			date: 1,
@@ -33,7 +35,7 @@ test("getTokenize", t => {
 	t.test("Europe/Warsaw", t => {
 		const tokenize = getTokenize("Europe/Warsaw");
 
-		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 17))), {
+		t.deepEqual(toPlainObject(tokenize(new Date(Date.UTC(2017, 1, 2, 17)))), {
 			year: 2017,
 			month: 1,
 			date: 2,
@@ -43,7 +45,7 @@ test("getTokenize", t => {
 			milliseconds: 0
 		});
 		t.deepEqual(
-			tokenize(new Date(Date.UTC(2017, 7, 2, 16))),
+			toPlainObject(tokenize(new Date(Date.UTC(2017, 7, 2, 16)))),
 			{ year: 2017, month: 7, date: 2, hours: 18, minutes: 0, seconds: 0, milliseconds: 0 },
 			"DST"
 		);
@@ -53,7 +55,7 @@ test("getTokenize", t => {
 	t.test("Asia/Shanghai", t => {
 		const tokenize = getTokenize("Asia/Shanghai");
 
-		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 10))), {
+		t.deepEqual(toPlainObject(tokenize(new Date(Date.UTC(2017, 1, 2, 10)))), {
 			year: 2017,
 			month: 1,
 			date: 2,
@@ -68,7 +70,7 @@ test("getTokenize", t => {
 	t.test("Milliseconds", t => {
 		const tokenize = getTokenize("Europe/Warsaw");
 
-		t.deepEqual(tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123))), {
+		t.deepEqual(toPlainObject(tokenize(new Date(Date.UTC(2017, 1, 2, 17, 14, 20, 123)))), {
 			year: 2017,
 			month: 1,
 			date: 2,
