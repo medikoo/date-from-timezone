@@ -1,7 +1,5 @@
-[![*nix build status][nix-build-image]][nix-build-url]
-[![Windows build status][win-build-image]][win-build-url]
+[![Build status][build-image]][build-url]
 [![Tests coverage][cov-image]][cov-url]
-![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
 # date-from-timezone
@@ -70,12 +68,9 @@ Project cross-browser compatibility supported by:
 
 <a href="https://browserstack.com"><img src="https://bstacksupport.zendesk.com/attachments/token/Pj5uf2x5GU9BvWErqAr51Jh2R/?name=browserstack-logo-600x315.png" height="150" /></a>
 
-[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/date-from-timezone/branches/master/shields_badge.svg
-[nix-build-url]: https://semaphoreci.com/medikoo-org/date-from-timezone
-[win-build-image]: https://ci.appveyor.com/api/projects/status/9mtwigtdxo1fki8x?svg=true
-[win-build-url]: https://ci.appveyor.com/api/project/medikoo/date-from-timezone
+[build-image]: https://github.com/medikoo/date-from-timezone/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/date-from-timezone/actions?query=workflow%3AIntegrate
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/date-from-timezone.svg
 [cov-url]: https://codecov.io/gh/medikoo/date-from-timezone
-[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/date-from-timezone.svg
 [npm-url]: https://www.npmjs.com/package/date-from-timezone
