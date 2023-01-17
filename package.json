@@ -28,7 +28,7 @@
 		"husky": "^4.3.8",
 		"lint-staged": "^13.1.0",
 		"nyc": "^15.1.0",
-		"prettier-elastic": "^1.19.1",
+		"prettier-elastic": "^2.2.1",
 		"tape": "^5.6.3",
 		"tape-index": "^3.2.0"
 	},
