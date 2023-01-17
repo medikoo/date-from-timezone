@@ -51,6 +51,7 @@ const Tokens = function (date, formatter) {
 	this.minutes = Number(match[5]);
 	this.seconds = Number(match[6]);
 	this.milliseconds = date.getMilliseconds();
+	if (this.hours === 24) this.hours = 0;
 };
 Object.defineProperties(
 	Tokens.prototype,
