@@ -11,8 +11,11 @@ if (!getTokenize) {
 }
 
 const resolveDate = function (refDate, resultDate, tokenize) {
+	// refDate is a local time zone date that expresses the time we're after in the target timezone
+	// resultDate is a potentially correct result
 	const resolvedDate = tokenize(resultDate).dateObject;
-
+	// resolvedDate shows in local time zone time that resultDate represents in the target timezone
+	// If they are the same, we are done
 	if (resolvedDate.getTime() === refDate.getTime()) return resultDate;
 	resultDate.setTime(resultDate.getTime() + refDate.getTime() - resolvedDate.getTime());
 	return resolveDate(refDate, resultDate, tokenize);
